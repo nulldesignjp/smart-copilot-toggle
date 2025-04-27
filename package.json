@@ -2,7 +2,8 @@
   "name": "smart-copilot-toggle",
   "displayName": "smart-copilot-toggle",
   "description": "",
-  "version": "0.0.1",
+  "version": "0.1.0",
+  "publisher": "hrsk.dev",
   "engines": {
     "vscode": "^1.99.0",
     "node": "v22.12.0",
@@ -11,7 +12,9 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:smartCopilotToggle.toggleCopilot"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [

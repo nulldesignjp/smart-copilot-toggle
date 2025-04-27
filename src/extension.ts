@@ -31,7 +31,7 @@ export function activate(context: vscode.ExtensionContext) {
     let shouldEnable = LANGUAGE_POLICY[languageId];
     if (shouldEnable === undefined) {
       shouldEnable = true;
-    }``
+    }
 
     if (shouldEnable) {
       if (languageId === 'vue') {
@@ -53,7 +53,7 @@ export function activate(context: vscode.ExtensionContext) {
     }
 
     try {
-      await v`scode.workspace.getConfiguration('github.copilot').update(
+      await vscode.workspace.getConfiguration('github.copilot').update(
         'inlineSuggest.enable',
         shouldEnable,
         vscode.ConfigurationTarget.Global
@@ -62,9 +62,9 @@ export function activate(context: vscode.ExtensionContext) {
       // 本番版ではエラー出さない
     }
 
-    vscode.window.showInformationMessage(
-      `Copilot Inline Suggest ${shouldEnable ? '✅ Enabled' : '❌ Disabled'}`
-    );
+    // vscode.window.showInformationMessage(
+    //   `Copilot Inline Suggest ${shouldEnable ? '✅ Enabled' : '❌ Disabled'}`
+    // );
   });
 
   context.subscriptions.push(disposable);
